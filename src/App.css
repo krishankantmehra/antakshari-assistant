@@ -19,8 +19,13 @@ body {
   padding: 30px;
   background-color: var(--backColor);
   color: white;
-
 }
+
+#logo{
+  width: 40px;
+  object-fit: contain;
+}
+
 #start{
   height: 100vh;
 }

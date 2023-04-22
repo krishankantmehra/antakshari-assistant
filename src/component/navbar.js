@@ -68,6 +68,7 @@ class navbar extends Component {
             <>
             <nav className='navbar navbar-dark bg-dark shadow sticky-top shadow'>
                 <div className='container-fluid'>
+                    <img id='logo' src='/logo.png'/>
                     <h1 className='navbar-brand' onClick={()=>this.toHome()}>Antakshari Assistant</h1>
                     
                     <div className='d-flex flex-rows'>
