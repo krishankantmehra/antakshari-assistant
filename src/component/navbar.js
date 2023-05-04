@@ -66,13 +66,15 @@ class navbar extends Component {
     render() {
         return (
             <>
-            <nav className='navbar navbar-dark bg-dark shadow sticky-top shadow'>
+            <nav className='navbar shadow'>
                 <div className='container-fluid'>
-                    <img id='logo' src='/logo.png'/>
-                    <h1 className='navbar-brand' onClick={()=>this.toHome()}>Antakshari Assistant</h1>
+                   <div className='brand'  onClick={()=>this.toHome()}>
+                        <img id='logo' src='/logo.png' alt='.'/>
+                        <h1 className='navbar-brand m-0 ms-3'>Antakshari Assistant</h1>
+                   </div>
                     
                     <div className='d-flex flex-rows'>
-                        <button  type={"button"} className='btn btn-dark nav-item' onClick={()=>this.logout()}>Logout</button>
+                        <button  type={"button"} className='btn btn-danger  nav-item' onClick={()=>this.logout()}>Logout</button>
                     </div>
                 </div>
             </nav>

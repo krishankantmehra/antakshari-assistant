@@ -165,48 +165,61 @@ class Online extends Component{
     })
 }
     render(){
+        let list = [];
+        if(this.state.online.length > 0){
+           list =  this.state.online.map((user,id) => {
+                return <div className='text-center p-2 mt-2 d-flex flex-row  justify-content-around' key={id}>
+                    <h5>{user[1]}</h5>
+                    <button className='btn btn-primary' onClick={()=>{this.sendNotification(user[0])}}>+</button>
+                </div>
+            })
+        }
+        else{
+            list = <h3>No other online players.</h3>
+        }
+
         if(this.state.loading)return <>
             <Navbar />
             <Loader/>
         </>
         if(this.state.start)return <Navigate to={"../game?id="+this.room}/>
+
         else
         return <div>
             <Navbar />
+            
             <div className='text-center'>
-                <button className='control btn btn-danger m-3' onClick={()=>this.startGame()}>Start Game</button>
-                <h1 className='revControl text-danger'>waiting...</h1>
+                <button className='control btn btnPrimary m-3' onClick={()=>this.startGame()}>Start Game</button>
+                <h1 className='revControl m-3 text-danger'>Wait For Host...  </h1>
             </div>
-            <div className='conatiner  d-flex flex-row justify-content-between'>
-                <div className='col-6 text-center '>
-                    <h1><strong>Online Players</strong></h1>
-                        
-                    {this.state.online.map((user,id) => {
-                        return <div className='text-center p-2 mt-2 d-flex flex-row  justify-content-around' key={id}>
-                            <h5>{user[1]}</h5>
-                            <button className='btn btn-primary' onClick={()=>{this.sendNotification(user[0])}}>+</button>
-                        </div>
-                    })}
 
-               
-                </div>
-
-                <div className='col-6 text-center mt-2'>
-                    <h1><strong>Waiting Players</strong></h1>
-                    {this.state.currunt.map((e,i)=>{
-                        return <h5 key={i}>{e}</h5>
-                    })}
-                </div>
-                
-            </div>
-           <div className='control'>
+            <div className='control'>
             <div className='my-3 d-flex flex-row justify-content-center'>
-                    <legend className='col-3' htmlFor='rounds'>Rounds</legend>
+                    <legend className='col-1 me-2' htmlFor='rounds'>Rounds</legend>
                     <div className='col-3'>
                         <input  id='rounds' defaultValue={5} min={1} max={15} className='form-control' type='number'/>
                     </div>
                 </div>
            </div>
+
+            <div className='darkContainer conatiner  d-flex flex-row justify-content-between'>
+                <div className='col-6 text-center '>
+                    <h1><strong>Online Players</strong></h1>
+                    <hr/>
+                    {list}
+                    
+                </div>
+
+                <div className='col-6 text-center '>
+                    <h1><strong>Waiting Players</strong></h1>
+                    <hr/>
+                    {this.state.currunt.map((e,i)=>{
+                        return <h5 key={i} class='pt-2'>{e}</h5>
+                    })}
+                </div>
+                
+            </div>
+           
         </div>
     }
     

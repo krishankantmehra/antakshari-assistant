@@ -131,24 +131,28 @@ class Room extends Component{
             <Navbar />
             <div className='text-center m-3'>
             
-                <button className='control btn btn-danger m-3' onClick={()=>this.startGame()}>Start Game</button>
-                <h1 className='revControl text-danger'>waiting...</h1>
-                <h1>Players list</h1>
-                <div className=' container mt-3 d-flex flex-column justify-content-center '>
-                    {
-                        this.state.players.map((name,id) => {
-                            return <h3 className='m-1' key={id}>{name}</h3>
-                        })
-                    }
-                </div>
+                <button className='control btn btnPrimary m-2' onClick={()=>this.startGame()}>Start Game</button>
+                <h1 className='revControl m-3 text-danger'>Wait For Host... </h1>
                 <div className='control'>
             <div className='my-3 d-flex flex-row justify-content-center'>
-                    <legend className='col-3' htmlFor='rounds'>Rounds</legend>
+                    <legend className='col-1' htmlFor='rounds'>Rounds</legend>
                     <div className='col-3'>
                         <input  id='rounds' defaultValue={5} min={1} max={15} className='form-control' type='number'/>
                     </div>
                 </div>
            </div>
+                <div className=' darkContainer '>
+                <h1>Players List</h1>
+                <hr/>
+                <div className=' container mt-3 d-flex flex-column justify-content-center '>
+                    {
+                        this.state.players.map((name,id) => {
+                            return <h4 className='m-1' key={id}>{name}</h4>
+                        })
+                    }
+                </div>
+                
+                </div>
             </div>
         </>
     }

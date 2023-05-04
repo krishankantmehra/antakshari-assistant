@@ -28,11 +28,27 @@ class main extends Component {
 
     render() {
         return (
-            <div className='d-flex flex-row h-100 align-items-center justify-content-center'>
-                
-                <Signup show={this.state.form} change={this.change}/>
-                <Login show={this.state.form} change={this.change} />
-            </div>
+           
+           <div className='d-flex flex-row'>
+                <div id='startImg' >
+                    <h1>
+                        Let's Play.
+                    </h1>
+                    <h5>Play with friends or online players.</h5>
+                    <div className='mb-4'>
+                        <a href='/about'>
+                            <button className='btn btnPrimary'>About</button>
+                        </a>
+                    </div>
+                    
+                </div>
+                <div className='register'>
+                    
+                    <Signup show={this.state.form} change={this.change}/>
+                    <Login show={this.state.form} change={this.change} />
+                </div>
+           </div>
+         
         )
     }
 }

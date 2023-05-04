@@ -67,8 +67,8 @@ class Notifications extends Component{
         return <>
         <Navbar/>
         
-        <div className="mt-2 text-center">
-            <button className="col-2    btn btn-danger shadow"  onClick={()=>{this.toHome()}}>
+        <div className="my-3 text-center">
+            <button className="col-1    btn btnPrimary shadow"  onClick={()=>{this.toHome()}}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
                     </svg> Back
@@ -78,8 +78,8 @@ class Notifications extends Component{
         <h1 id='noNoti' className="text-center">No New Notifications</h1>
         <div className="d-flex  flex-column m-3 " id="notifications">
             {this.state.notification.map((e) => {
-                return <div className="container d-flex flex-row justify-content-between" key={e[1]}>
-                    <h5>{e[0]}</h5>
+                return <div className="darkContainer container d-flex flex-row justify-content-between" key={e[1]}>
+                    <h5 className="pt-2 m-0 text-center">{e[0]}</h5>
 
                     <div >
 

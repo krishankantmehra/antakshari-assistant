@@ -73,8 +73,10 @@ class Login extends Component {
         return (
             <div>
                 <div id="login" className="shadow-lg" >
-                    <h1>Login</h1>
-                    <p>Haven't joined yet<button className="btn btn-secondary border-none ms-2" onClick={this.props.change}> Sign up </button></p>
+                    <div className='text-center'>
+                    <h2>Login</h2>
+                    <p>Haven't joined yet?<button className="btn btnSecondary ms-2" onClick={this.props.change}> Register </button></p>
+                    </div>
                     <form id="loginForm">
                         <label htmlFor='Username' >Username : </label>
                         <input type="text" className="form-control" name='username' id="loginName" placeholder='NAME' onKeyDown={this.handleClick.bind(this)} /><br></br>
@@ -83,7 +85,7 @@ class Login extends Component {
                         <input type="password" className="form-control" name='password' id="loginPassword" placeholder='PASSWORD' onKeyDown={this.handleClick.bind(this)}/><br></br>
 
                     </form>
-                    <button type='submit' className="w-100sbtn btn-primary" onClick={() => this.submitLoginForm()}>LOGIN</button>
+                    <button type='submit' className="w-100 btn btnPrimary" onClick={() => this.submitLoginForm()}>LOGIN</button>
                     <p id="loginerrormsg" className='text-danger'></p>
                 </div>
             </div>

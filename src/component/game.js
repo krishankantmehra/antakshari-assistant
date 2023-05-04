@@ -130,7 +130,8 @@ class Game extends Component{
                 var ind = rooms[0]['score'].indexOf(Math.max(...rooms[0]['score']))
                 swal.fire({
                     'title':"Winner is " + rooms[0]['players'][ind],
-                    allowOutsideClick: false
+                    allowOutsideClick: false,
+                    background: 'white'
                 }).then(()=>
                     {
                     window.location.href = window.location.origin
@@ -203,8 +204,9 @@ class Game extends Component{
             }
         }
        
-        $('.players').css('color','rgba(0, 0, 0, 0.5)')
-        $(`#player${this.state.current}`).css('color','black')
+        $('.rest').css('color','#696262')
+        $(`#player${this.state.current}`).css('color','white')
+        $(`#score${this.state.current}`).css('color','white')
   
 
     }
@@ -278,22 +280,24 @@ class Game extends Component{
         else
         return <>
             <Navbar/>
-            <h1 className='text-center'>
+            <h2 className='text-center'>
                 Round {parseInt((this.state.Totolrounds - this.state.round) / this.state.players.length )  + 1}
-            </h1>
-            <div className='container text-center d-flex flex-row h-25 mt-2'>
+            </h2>
+            <div className='darkContainer container text-center d-flex flex-row h-25 m-auto my-2 '>
 
                 <div className='col-6'>
-                    <h1>Current Players</h1>
+                    <h2>Current Players</h2>
+                    <hr/>
                     {this.state.players.map((p,i)=>{
-                        return <h4 id={`player${i}`} className='players' key={i}>{p}</h4>
+                        return <h4 id={`player${i}`} className='rest' key={i}>{p}</h4>
                     })}
                 </div>
 
                 <div className='col-6'>
-                    <h1>Score</h1>
+                    <h2>Score</h2>
+                    <hr/>
                     {this.state.score.map((p,i)=>{
-                        return <h4 key={i}>{p}</h4>
+                        return <h4 id={`score${i}`} className='rest' key={i}>{p}</h4>
                     })}
                 </div>
 
@@ -306,12 +310,12 @@ class Game extends Component{
                     
                 </p>
                 <div className="container collapse" id="collapseExample">
-                    <div className="card card-body" style={{height:'150px',overflowY:'scroll'}}>
+                    <div className="card card-body text-dark" style={{height:'120px',overflowY:'scroll'}}>
                         {this.state.lyric}
                     </div>
                 </div>
             </div>
-            <div className='mt-4 m-auto col-6 d-flex flex-row justify-content-around' >
+            <div className='mt-3 m-auto col-6 d-flex flex-row justify-content-around' >
             
                 <button className='col-3 btn btn-primary shadow' onClick={()=>this.microphoneStart()} id='play' style={{display:'none'}}>
                     Play

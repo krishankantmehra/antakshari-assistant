@@ -126,13 +126,16 @@ class Signup extends Component {
         return (
             <div>
                 <div id="signup" className="shadow-lg" >
-                    <h1>Sign Up</h1>
-                    <p>Already a member <button className="btn btn-secondary border-none" onClick={() => this.props.change()}> login </button></p>
+                    <div className='text-center'>
+                        <h2>Sign Up</h2>
+                        <p>Already a member?  <button className="btn btnSecondary border-none" onClick={() => this.props.change()}> Login  </button></p>  
+                    </div>
+                    
                     <form id='signupform'>
                         <label htmlFor='Username' >Username  </label>
                         <input type="text" className="form-control" name='username' id="name" placeholder='NAME' onKeyDown={this.handleClick.bind(this)}/><br></br>
 
-                        <label htmlFor='password' >Password (atleast 8 charecter)</label>
+                        <label htmlFor='password' >Password (Atleast 8 charecter)</label>
                         <input type="password" className="form-control" name='password' id="password" placeholder='PASSWORD' onKeyDown={this.handleClick.bind(this)}/><br></br>
 
                         <label htmlFor='confirm' >Confirm password  </label>
@@ -147,7 +150,7 @@ class Signup extends Component {
 
                            <div  className='col-6'>
                                 <input className='mx-1' type='checkbox' id='hiphop' value="hip hop"  onChange={this.handleChange.bind(this)}/>
-                                <label htmlFor='hiphop'>Hiphop</label> 
+                                <label htmlFor='hiphop'>Hip-Hop</label> 
                            </div>
 
                             <div  className='col-6'>
@@ -167,7 +170,7 @@ class Signup extends Component {
                         </div>
                     </form>
                 
-                    <button type='submit' id="signupbtn" className="btn btn-primary" onClick={() => this.submitSignupForm()}>SIGN UP</button>
+                    <button type='submit' id="signupbtn" className="w-100 btn btnPrimary" onClick={() => this.submitSignupForm()}>SIGN UP</button>
                     <p id="errormsg" className='text-danger'></p>
                 </div>
             </div>
