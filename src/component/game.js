@@ -129,7 +129,8 @@ class Game extends Component{
             if(rooms[0]['round'] === 0){
                 var ind = rooms[0]['score'].indexOf(Math.max(...rooms[0]['score']))
                 swal.fire({
-                    'title':"Winner is " + rooms[0]['players'][ind],
+                    'title':"congratulations " + rooms[0]['players'][ind],
+                    'text' : 'You won.',
                     allowOutsideClick: false,
                     background: 'white'
                 }).then(()=>

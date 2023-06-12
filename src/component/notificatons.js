@@ -2,7 +2,6 @@ import { Component } from "react";
 import {db} from '../firebase-config'
 import { collection,query,where,onSnapshot,deleteDoc,doc} from 'firebase/firestore'   
 import Navbar from './navbar'
-import Loader from "./loading";
 
 class Notifications extends Component{
     state = {

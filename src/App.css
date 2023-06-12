@@ -9,6 +9,7 @@ body {
   color: var(--fontcolor);
   font-family: sans-serif;
   background: url("/public/bg.jpg");
+  /* backdrop-filter: blur(px); */
   z-index: -1;
   background-position: center;
   background-repeat: no-repeat;
@@ -109,6 +110,9 @@ body {
   width: 90vw;
   padding: 10px 30px;
   background-color: var(--backColor);
+}
+ul{
+  list-style-type:none;
 }
 .content{
   height: 80vh;

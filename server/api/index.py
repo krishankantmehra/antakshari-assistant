@@ -20,7 +20,7 @@ def get_data():
     # genre = ['hip hop']
     res=[]
    
-    
+    print(type(lyrics) , type(genre))
     
     for word in lyrics.split(' ')[::-1]:
         

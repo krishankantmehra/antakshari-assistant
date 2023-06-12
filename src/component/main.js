@@ -29,7 +29,7 @@ class main extends Component {
     render() {
         return (
            
-           <div className='d-flex flex-row'>
+           <div className=' d-flex flex-sm-row flex-m-column'>
                 <div id='startImg' >
                     <h1>
                         Let's Play.

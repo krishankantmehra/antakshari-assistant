@@ -6,6 +6,7 @@ import NoPage from './component/Nopage'
 import Online from './component/online';
 import Notifications from './component/notificatons';
 import Game from './component/game';
+import About from './component/about';
 function App() {
 
 
@@ -18,6 +19,7 @@ function App() {
           <Route path='online' element={<Online />} />
           <Route path='notifications' element={<Notifications />} />
           <Route path='game' element={<Game />} />
+          <Route path='about' element={<About />} />
           <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>
